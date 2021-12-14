@@ -211,7 +211,7 @@ assign [class="firefox" instance="Navigator"] $web
 assign [class="URxvt" instance="urxvt"] $terms
 
 # Set lockwall
-set $i3lockwall i3lock
+set $i3lockwall bash /home/$USER/.config/i3/i3lock-multimonitor/lock
 
 # Add a locking keystroke
 bindsym $mod+CTRL+Shift+l exec --no-startup-id $i3lockwall
