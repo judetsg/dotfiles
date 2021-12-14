@@ -191,7 +191,7 @@ assign [class="firefox" instance="Navigator"] $web
 assign [class="URxvt" instance="urxvt"] $terms
 
 # Set lockwall
-set $i3lockwall i3lock -i ~/images/i3lock.png
+set $i3lockwall i3lock
 
 # Add a locking keystroke
 bindsym $mod+CTRL+Shift+l exec --no-startup-id $i3lockwall
