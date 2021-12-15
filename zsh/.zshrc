@@ -39,6 +39,17 @@ source ~/dotfiles/zsh/external/bd.zsh
 # Custom Scripts
 source ~/dotfiles/zsh/scripts.sh
 
+# fzf
+if [ $(command -v "fzf") ]; then
+    source /usr/share/fzf/completion.zsh
+    source /usr/share/fzf/key-bindings.zsh
+fi
+
+# Auto startx
+if [ "$(tty)" = "/dev/tty1" ]; then
+    pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"
+fi
+
 # Keep this at the very botton of this file to make
 # every file profit from syntax highlighting
 # source zsh-syntax-highlighting
