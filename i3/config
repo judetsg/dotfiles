@@ -233,7 +233,7 @@ bar {
         focused_workspace   $background $background $red1
         active_workspace    $black2 $black1 $white2
         inactive_workspace  $black1 $black2 $foreground
-        urgent_workdspace   $red1 $red1 $white1
+        urgent_workspace   $red1 $red1 $white1
         binding_mode        $background $red2 $white2
     }
 }
