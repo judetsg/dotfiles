@@ -219,7 +219,23 @@ bindsym $mod+CTRL+Shift+l exec --no-startup-id $i3lockwall
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+#        status_command i3status
+    status_command i3status --config ~/.config/i3/i3status.conf
+    # Disable all tray icons
+    tray_output none
+    # tray_output primary
+    colors {
+        background $black2
+        statusline $white2
+        separator $white2
+
+        # border background text
+        focused_workspace   $background $background $red1
+        active_workspace    $black2 $black1 $white2
+        inactive_workspace  $black1 $black2 $foreground
+        urgent_workdspace   $red1 $red1 $white1
+        binding_mode        $background $red2 $white2
+    }
 }
 # Review the lines below and append to ~/.config/i3/config
 
@@ -262,6 +278,30 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [class="Navigator" instance="firefox"] floating enable
 for_window [class="URxvt*"] border pixel 1
+
 # Set backlight control
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -5
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight +5
+
+# Terminal Scratchpad
+for_window [instance="urxvt_scratchpad"] move to scratchpad, border none
+bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show
+exec urxvtc -name urxvt_scratchpad
+
+# htop scratchpad
+for_window [instance="htop_scratchpad"] move to scratchpad, border none
+bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show
+exec urxvtc -name htop_scratchpad -e htop
+
+# Manage screen
+set $mode_display Config monitor resolution - Default config (d)
+
+mode "$mode_display" {
+    bindsym d exec --no-startup-id sh "$HOME/.screenlayout/home.sh", mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+x mode "$mode_display"
