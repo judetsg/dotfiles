@@ -27,4 +27,6 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-
+call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
+    Plug 'simnalamburt/vim-mundo'
+call plug#end()

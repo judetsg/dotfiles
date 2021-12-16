@@ -50,6 +50,11 @@ if [ "$(tty)" = "/dev/tty1" ]; then
     pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"
 fi
 
+# Use Ctrl+g to clear the shell
+bindkey -r '^l'
+bindkey -r '^g'
+bindkey -s '^g' 'clear\n'
+
 # Keep this at the very botton of this file to make
 # every file profit from syntax highlighting
 # source zsh-syntax-highlighting

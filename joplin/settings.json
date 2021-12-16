@@ -1,0 +1,6 @@
+{
+	"$schema": "https://joplinapp.org/schema/settings.json",
+	"locale": "en_US",
+	"api.token": "0797de8137c91e540f719501451d15b34553ccbf435e432ead5b071e9bad406c948872ac02adc134ee11a5f170fc3dd1c5fe23ba2b657b9f4f34a1575ba19092",
+	"sync.target": 7
+}

@@ -347,4 +347,4 @@ mode "$mode_display" {
 bindsym $mod+x mode "$mode_display"
 
 # Startup dunst
-exec --no-startup-id dunst
+# exec --no-startup-id dunst

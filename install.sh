@@ -29,3 +29,26 @@ cp -rf "$DOTFILES/fonts" "$XDG_DATA_HOME"
 ############
 # mkdir -p "$XDG_CONFIG_HOME/dunst"
 # ln -sf "$DOTFILES/dunst/dunstrc" "$XDG_CONFIG_HOME/dunst/dunstrc"
+
+## Install automatically neovim plugin manager
+[ ! -f "$DOTFILES/nvim/autoload/plug.vim" ] \
+    && curl -fLo "$DOTFILES/nvim/autoload/plug.vim" --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+mkdir -p "$XDG_CONFIG_HOME/nvim/autoload"
+ln -sf "$DOTFILES/nvim/autoload/plug.vim" "$XDG_CONFIG_HOME/nvim/autoload/plug.vim"
+
+# Install (or update) all the plugins
+nvim --noplugin +PlugUpdate +qa
+
+###########
+## tmux ###
+###########
+mkdir -p "$XDG_CONFIG_HOME/tmux"
+ln -sf "$DOTFILES/tmux/tmux.conf" "$XDG_CONFIG_HOME/tmux"
+
+#############
+## joplin ###
+#############
+rm -rf "$XDG_CONFIG_HOME/joplin"
+ln -s "$DOTFILES/joplin" "$XDG_CONFIG_HOME"
