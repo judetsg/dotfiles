@@ -41,7 +41,8 @@ URxvt.iso14755_52: false
 *.color7:       #f2f1b9
 *.color15:      #f6f6c9
 
-URxvt*font: xft:CascadiaMono:size=12:antialias=true
+! URxvt*font: xft:CascadiaMono:size=12:antialias=true
+URxvt*font: xft:CaskaydiaCove Nerd Font Mono:style=Regular:size=14:pixelsize=16:antialias=true
 URxvt*letterSpace: -1
 URxvt*borderless: false
 URxvt*externalBorder: 0
