@@ -42,7 +42,6 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'neomake/neomake'
-    Plug 'machakann/vim-sandwich'
     Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
