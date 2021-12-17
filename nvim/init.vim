@@ -29,4 +29,5 @@ set shiftwidth=4
 
 call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     Plug 'simnalamburt/vim-mundo'
+    Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
