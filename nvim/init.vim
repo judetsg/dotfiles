@@ -27,7 +27,25 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
+let g:coc_global_extensions = [
+            \ 'coc-snippets',
+            \]
+" Map <space>e to open coc-explorer
+nmap <space>e <Cmd>CocCommand explorer<CR>
+
 call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     Plug 'simnalamburt/vim-mundo'
     Plug 'christoomey/vim-tmux-navigator'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'honza/vim-snippets'
+    Plug 'wellle/tmux-complete.vim'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'neomake/neomake'
+    Plug 'machakann/vim-sandwich'
+    Plug 'jiangmiao/auto-pairs'
 call plug#end()
+
+" Various setup
+" Neomake
+call neomake#configure#automake('nrwi', 500)
