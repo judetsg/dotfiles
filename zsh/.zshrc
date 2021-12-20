@@ -1,6 +1,9 @@
 source "$XDG_CONFIG_HOME/zsh/aliases"
 autoload -Uz compinit; compinit
 
+# Path
+export PATH=$HOME/.idris2/bin:$PATH
+
 # Autocomplete hidden files
 _comp_options+=(globdots)
 source ~/dotfiles/zsh/external/completion.zsh

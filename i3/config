@@ -250,6 +250,9 @@ assign [class="firefox" instance="Navigator"] $web
 # Open urxvt on workspace $terms
 assign [class="URxvt" instance="urxvt"] $terms
 
+# Open VSCode in workspace $dev
+assign [class="Code" instance="code"] $dev
+
 # Set lockwall
 set $i3lockwall bash /home/$USER/.config/i3/i3lock-multimonitor/lock
 
