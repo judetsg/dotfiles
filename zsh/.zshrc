@@ -1,5 +1,6 @@
 source "$XDG_CONFIG_HOME/zsh/aliases"
 autoload -Uz compinit; compinit
+[ -f "/home/jude/.ghcup/env" ] && source "/home/jude/.ghcup/env" # ghcup-env
 
 # Path
 export PATH=$HOME/.idris2/bin:$PATH

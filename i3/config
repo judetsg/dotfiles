@@ -117,7 +117,7 @@ set $files "4: files"
 set $mails "5: mails"
 set $documents "6: documents"
 set $dev "7: dev"
-set $ws8 "8"
+set $dev2 "8: dev2"
 set $ws9 "9"
 set $ws10 "10"
 
@@ -129,7 +129,7 @@ bindsym $mod+4 workspace number $files
 bindsym $mod+5 workspace number $mails
 bindsym $mod+6 workspace number $documents
 bindsym $mod+7 workspace number $dev
-bindsym $mod+8 workspace number $ws8
+bindsym $mod+8 workspace number $dev2
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
@@ -243,15 +243,22 @@ set_from_resource $white2 color15 #ffffff
 # Disable focus on mouse hover
 focus_follows_mouse no
 
-# Open qutebrowser and firefox in workspace $web
+# Open qutebrowser and firefox and Chrome in workspace $web
 assign [class="qutebrowser" instance="qutebrowser"] $web
 assign [class="firefox" instance="Navigator"] $web
+assign [class="Google-chrome" instance="google-chrome"] $web
 
 # Open urxvt on workspace $terms
 assign [class="URxvt" instance="urxvt"] $terms
 
 # Open VSCode in workspace $dev
 assign [class="Code" instance="code"] $dev
+
+# Open VirtualBox in workspace $dev
+assign [class="VirtualBox Manager" instance="VirtualBox Manager"] $dev
+
+# Open Spring Tool Suite 4
+assign [class="SpringToolSuite4" instance="SpringToolSuite4"] $dev2
 
 # Set lockwall
 set $i3lockwall bash /home/$USER/.config/i3/i3lock-multimonitor/lock
